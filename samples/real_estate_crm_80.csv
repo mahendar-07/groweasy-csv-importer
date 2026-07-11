@@ -1,0 +1,81 @@
+created_at,name,email,country_code,mobile_without_country_code,company,city,state,country,lead_owner,crm_status,crm_note,data_source,possession_time,description
+2026-03-28 08:55:00,Ritu Raheja,ritu.raheja@realty0.com,+91,9804086195,Enterprise Corp,Pune,Maharashtra,India,test@gmail.com,GOOD_LEAD_FOLLOW_UP,"Notes for lead 0, possession discussed",sarjapur_plots,,3BHK enquiry
+2026-04-23 15:23:00,Kiran Kumar,kiran.kumar@realty1.com,+91,9956084565,Freelance,Chennai,Tamil Nadu,India,test@gmail.com,GOOD_LEAD_FOLLOW_UP,"Notes for lead 1, possession discussed",meridian_tower,,3BHK enquiry
+2026-03-04 09:20:00,Swati Bisht,swati.bisht@realty2.com,+91,9809656613,Startup Inc,Pune,Maharashtra,India,test@gmail.com,SALE_DONE,"Notes for lead 2, possession discussed",sarjapur_plots,6 months,3BHK enquiry
+2026-06-28 13:39:00,Sunita Mehta,sunita.mehta@realty3.com,+91,9567013808,Startup Inc,Hyderabad,Telangana,India,varun@groweasy.ai,GOOD_LEAD_FOLLOW_UP,"Notes for lead 3, possession discussed",sarjapur_plots,1 year,
+2026-02-28 17:43:00,Ashok Bisht,ashok.bisht@realty4.com,+91,9938927341,,Hyderabad,Telangana,India,varun@groweasy.ai,DID_NOT_CONNECT,,random_campaign_xyz,1 year,
+2026-06-15 13:23:00,Kavya Shah,kavya.shah@realty5.com,+91,9576676179,Shah Textiles,Chennai,Tamil Nadu,India,priya@groweasy.ai,,,varah_swamy,1 year,
+2026-04-17 14:58:00,Rahil Rao,rahil.rao@realty6.com,+91,9703091482,Shah Textiles,Chennai,Tamil Nadu,India,test@gmail.com,BAD_LEAD,"Notes for lead 6, possession discussed",eden_park,1 year,3BHK enquiry
+2026-02-28 09:28:00,Arjun Raheja,arjun.raheja@realty7.com,+91,9285388355,,Bengaluru,Karnataka,India,varun@groweasy.ai,Unknown,"Notes for lead 7, possession discussed",varah_swamy,1 year,3BHK enquiry
+2026-03-28 10:45:00,Rohit Chawla,rohit.chawla@realty8.com,+91,9861888313,Iyer & Co,Pune,Maharashtra,India,test@gmail.com,,,eden_park,6 months,
+2026-05-19 13:29:00,Arjun Rao,arjun.rao@realty9.com,+91,9962925204,Freelance,Delhi,Delhi,India,priya@groweasy.ai,,"Notes for lead 9, possession discussed",meridian_tower,1 year,
+2026-07-14 17:04:00,Deepa Joshi,deepa.joshi@realty10.com,+91,9234568604,Enterprise Corp,Ahmedabad,Gujarat,India,varun@groweasy.ai,SALE_DONE,,leads_on_demand,1 year,
+2026-07-05 14:32:00,Swati Chawla,swati.chawla@realty11.com,+91,9159499094,Shah Textiles,Chennai,Tamil Nadu,India,priya@groweasy.ai,BAD_LEAD,,varah_swamy,6 months,
+2026-03-07 18:35:00,Divya Patel,divya.patel@realty12.com,+91,9394689553,Iyer & Co,Bengaluru,Karnataka,India,test@gmail.com,,"Notes for lead 12, possession discussed",leads_on_demand,6 months,
+2026-06-20 19:57:00,Kavya Pal,kavya.pal@realty13.com,+91,9749762955,Enterprise Corp,Chennai,Tamil Nadu,India,varun@groweasy.ai,GOOD_LEAD_FOLLOW_UP,,,1 year,3BHK enquiry
+2026-05-21 08:31:00,Ritu Sharma,ritu.sharma@realty14.com,+91,9773412230,Freelance,Ahmedabad,Gujarat,India,test@gmail.com,Unknown,"Notes for lead 14, possession discussed",sarjapur_plots,6 months,3BHK enquiry
+2026-04-03 19:03:00,Manoj Reddy,manoj.reddy@realty15.com,+91,9269737590,,Pune,Maharashtra,India,sales@groweasy.ai,SALE_DONE,,varah_swamy,6 months,
+2026-04-05 13:32:00,Deepa Kumar,deepa.kumar@realty16.com,+91,9703068400,Shah Textiles,Delhi,Delhi,India,test@gmail.com,DID_NOT_CONNECT,,varah_swamy,,
+2026-04-28 17:26:00,Rahil Shah,rahil.shah@realty17.com,+91,9366578178,Iyer & Co,Pune,Maharashtra,India,test@gmail.com,,"Notes for lead 17, possession discussed",eden_park,6 months,
+2026-03-16 08:05:00,Divya Mehta,divya.mehta@realty18.com,+91,9522240582,Freelance,Kochi,Kerala,India,sales@groweasy.ai,DID_NOT_CONNECT,,varah_swamy,Immediate,
+2026-03-18 08:54:00,Arjun Das,arjun.das@realty19.com,+91,9215424112,GrowEasy,Kochi,Kerala,India,priya@groweasy.ai,BAD_LEAD,"Notes for lead 19, possession discussed",random_campaign_xyz,,
+2026-03-18 12:04:00,Kiran Shah,kiran.shah@realty20.com,+91,9514838889,Freelance,Mumbai,Maharashtra,India,sales@groweasy.ai,,,leads_on_demand,Immediate,
+2026-07-11 16:23:00,Rahil Reddy,rahil.reddy@realty21.com,+91,9910637681,Iyer & Co,Delhi,Delhi,India,priya@groweasy.ai,,"Notes for lead 21, possession discussed",leads_on_demand,Immediate,
+2026-05-15 10:38:00,Tarvinder Kumar,tarvinder.kumar@realty22.com,+91,9653520069,Iyer & Co,Kochi,Kerala,India,test@gmail.com,,,sarjapur_plots,1 year,
+2026-06-19 12:30:00,Divya Verma,divya.verma@realty23.com,+91,9975903641,Rao Constructions,Kochi,Kerala,India,test@gmail.com,BAD_LEAD,"Notes for lead 23, possession discussed",sarjapur_plots,1 year,3BHK enquiry
+2026-03-21 17:36:00,Ashok Rao,ashok.rao@realty24.com,+91,9344322679,Rao Constructions,Kochi,Kerala,India,sales@groweasy.ai,DID_NOT_CONNECT,"Notes for lead 24, possession discussed",,,
+2026-05-23 09:12:00,Manoj Shetty,manoj.shetty@realty25.com,+91,9120333847,,Hyderabad,Telangana,India,test@gmail.com,SALE_DONE,,,6 months,
+2026-07-28 19:46:00,Ritu Das,ritu.das@realty26.com,+91,9166874023,Iyer & Co,Kochi,Kerala,India,priya@groweasy.ai,,,,,
+2026-05-11 16:22:00,John Bisht,john.bisht@realty27.com,+91,9825708356,Startup Inc,Kochi,Kerala,India,sales@groweasy.ai,DID_NOT_CONNECT,"Notes for lead 27, possession discussed",varah_swamy,1 year,
+2026-06-23 15:20:00,Sarah Patel,sarah.patel@realty28.com,+91,9615185000,Enterprise Corp,Mumbai,Maharashtra,India,test@gmail.com,BAD_LEAD,,,,3BHK enquiry
+2026-03-02 12:45:00,Kiran Nair,kiran.nair@realty29.com,+91,9184857208,Enterprise Corp,Chennai,Tamil Nadu,India,sales@groweasy.ai,Unknown,,sarjapur_plots,6 months,
+2026-02-04 17:47:00,Rohit Singh,rohit.singh@realty30.com,+91,9730104453,Tech Solutions,Pune,Maharashtra,India,priya@groweasy.ai,GOOD_LEAD_FOLLOW_UP,"Notes for lead 30, possession discussed",leads_on_demand,6 months,3BHK enquiry
+2026-03-23 15:06:00,Vikram Mohammad,vikram.mohammad@realty31.com,+91,9831424323,Iyer & Co,Ahmedabad,Gujarat,India,varun@groweasy.ai,,"Notes for lead 31, possession discussed",eden_park,,3BHK enquiry
+2026-07-10 13:18:00,Arjun Joshi,arjun.joshi@realty32.com,+91,9793527609,Rao Constructions,Mumbai,Maharashtra,India,varun@groweasy.ai,Unknown,"Notes for lead 32, possession discussed",leads_on_demand,Immediate,3BHK enquiry
+2026-01-27 14:50:00,Dhruv Gupta,dhruv.gupta@realty33.com,+91,9631914410,Iyer & Co,Chennai,Tamil Nadu,India,test@gmail.com,GOOD_LEAD_FOLLOW_UP,,leads_on_demand,Immediate,3BHK enquiry
+2026-06-18 16:31:00,John Patel,john.patel@realty34.com,+91,9244096091,Freelance,Kochi,Kerala,India,sales@groweasy.ai,BAD_LEAD,,meridian_tower,1 year,
+2026-01-24 13:50:00,Pooja Singh,pooja.singh@realty35.com,+91,9416779880,Reddy Builders,Chennai,Tamil Nadu,India,priya@groweasy.ai,DID_NOT_CONNECT,"Notes for lead 35, possession discussed",,,3BHK enquiry
+2026-04-22 09:11:00,Divya Kumar,divya.kumar@realty36.com,+91,9250980852,,Bengaluru,Karnataka,India,test@gmail.com,DID_NOT_CONNECT,,sarjapur_plots,6 months,
+2026-05-24 17:00:00,Rajesh Kumar,rajesh.kumar@realty37.com,+91,9380840558,Enterprise Corp,Pune,Maharashtra,India,priya@groweasy.ai,GOOD_LEAD_FOLLOW_UP,"Notes for lead 37, possession discussed",sarjapur_plots,1 year,
+2026-06-04 18:58:00,Manoj Verma,manoj.verma@realty38.com,+91,9416794215,Enterprise Corp,Pune,Maharashtra,India,priya@groweasy.ai,DID_NOT_CONNECT,"Notes for lead 38, possession discussed",sarjapur_plots,6 months,
+2026-06-18 15:48:00,Suresh Nair,suresh.nair@realty39.com,+91,9677155220,Tech Solutions,Ahmedabad,Gujarat,India,priya@groweasy.ai,Unknown,"Notes for lead 39, possession discussed",random_campaign_xyz,Immediate,
+2026-05-04 08:53:00,Divya Nair,divya.nair@realty40.com,+91,9688033900,Freelance,Bengaluru,Karnataka,India,priya@groweasy.ai,,"Notes for lead 40, possession discussed",eden_park,1 year,3BHK enquiry
+2026-06-19 15:05:00,Pooja Mohammad,pooja.mohammad@realty41.com,+91,9648011361,,Mumbai,Maharashtra,India,varun@groweasy.ai,SALE_DONE,,sarjapur_plots,,
+2026-06-01 14:16:00,Rohit Mehta,rohit.mehta@realty42.com,+91,9976659977,Rao Constructions,Pune,Maharashtra,India,priya@groweasy.ai,,,sarjapur_plots,1 year,3BHK enquiry
+2026-04-02 12:26:00,Rohit Shah,rohit.shah@realty43.com,+91,9293253475,Iyer & Co,Bengaluru,Karnataka,India,sales@groweasy.ai,BAD_LEAD,"Notes for lead 43, possession discussed",sarjapur_plots,,3BHK enquiry
+2026-06-22 16:08:00,Kiran Reddy,kiran.reddy@realty44.com,+91,9801726890,Enterprise Corp,Bengaluru,Karnataka,India,varun@groweasy.ai,DID_NOT_CONNECT,"Notes for lead 44, possession discussed",sarjapur_plots,6 months,3BHK enquiry
+2026-03-15 18:46:00,Priya Rao,priya.rao@realty45.com,+91,9684593732,GrowEasy,Hyderabad,Telangana,India,sales@groweasy.ai,DID_NOT_CONNECT,,varah_swamy,6 months,
+2026-07-22 14:39:00,Ashok Mohammad,ashok.mohammad@realty46.com,+91,9922543647,Rao Constructions,Hyderabad,Telangana,India,priya@groweasy.ai,DID_NOT_CONNECT,,leads_on_demand,Immediate,
+2026-06-02 14:28:00,Manoj Shah,manoj.shah@realty47.com,+91,9351619881,Freelance,Mumbai,Maharashtra,India,priya@groweasy.ai,GOOD_LEAD_FOLLOW_UP,,varah_swamy,6 months,3BHK enquiry
+2026-05-20 18:52:00,Ashok Sharma,ashok.sharma@realty48.com,+91,9444311548,Tech Solutions,Delhi,Delhi,India,test@gmail.com,DID_NOT_CONNECT,"Notes for lead 48, possession discussed",leads_on_demand,6 months,
+2026-06-22 14:35:00,Rajesh Shah,rajesh.shah@realty49.com,+91,9632168774,Rao Constructions,Chennai,Tamil Nadu,India,test@gmail.com,Unknown,"Notes for lead 49, possession discussed",random_campaign_xyz,1 year,3BHK enquiry
+2026-04-06 16:30:00,Naveen Pal,naveen.pal@realty50.com,+91,9358737619,Tech Solutions,Pune,Maharashtra,India,test@gmail.com,Unknown,,sarjapur_plots,Immediate,
+2026-04-08 12:13:00,Naveen Chawla,naveen.chawla@realty51.com,+91,9454617185,Shah Textiles,Chennai,Tamil Nadu,India,sales@groweasy.ai,BAD_LEAD,,,6 months,
+2026-07-03 11:51:00,Kiran Das,kiran.das@realty52.com,+91,9917865301,Reddy Builders,Hyderabad,Telangana,India,priya@groweasy.ai,SALE_DONE,,varah_swamy,1 year,3BHK enquiry
+2026-06-04 19:48:00,Anita Raheja,anita.raheja@realty53.com,+91,9614237373,Tech Solutions,Mumbai,Maharashtra,India,priya@groweasy.ai,SALE_DONE,"Notes for lead 53, possession discussed",leads_on_demand,1 year,3BHK enquiry
+2026-03-09 13:32:00,Kiran Mehta,kiran.mehta@realty54.com,+91,9633947427,,Delhi,Delhi,India,varun@groweasy.ai,Unknown,,random_campaign_xyz,1 year,3BHK enquiry
+2026-01-19 11:47:00,Sunita Kumar,sunita.kumar@realty55.com,+91,9256683320,Rao Constructions,Ahmedabad,Gujarat,India,test@gmail.com,,"Notes for lead 55, possession discussed",leads_on_demand,,
+2026-04-19 11:31:00,Amit Kumar,amit.kumar@realty56.com,+91,9691247918,Enterprise Corp,Mumbai,Maharashtra,India,test@gmail.com,SALE_DONE,"Notes for lead 56, possession discussed",,,
+2026-02-24 16:31:00,Ashok Nair,ashok.nair@realty57.com,+91,9297619784,Freelance,Chennai,Tamil Nadu,India,varun@groweasy.ai,,,random_campaign_xyz,Immediate,3BHK enquiry
+2026-04-05 18:14:00,Manoj Shah,manoj.shah@realty58.com,+91,9172980019,Iyer & Co,Hyderabad,Telangana,India,varun@groweasy.ai,DID_NOT_CONNECT,"Notes for lead 58, possession discussed",varah_swamy,Immediate,3BHK enquiry
+2026-06-16 08:00:00,Manoj Das,manoj.das@realty59.com,+91,9671458801,Freelance,Kochi,Kerala,India,sales@groweasy.ai,GOOD_LEAD_FOLLOW_UP,,,1 year,
+2026-07-06 09:58:00,Sarah Rao,sarah.rao@realty60.com,+91,9203416251,Freelance,Ahmedabad,Gujarat,India,priya@groweasy.ai,DID_NOT_CONNECT,,leads_on_demand,1 year,3BHK enquiry
+2026-03-13 15:36:00,Rajesh Reddy,rajesh.reddy@realty61.com,+91,9361142486,Tech Solutions,Bengaluru,Karnataka,India,test@gmail.com,Unknown,"Notes for lead 61, possession discussed",meridian_tower,Immediate,
+2026-01-21 08:44:00,Kiran Reddy,kiran.reddy@realty62.com,+91,9284021712,Shah Textiles,Kochi,Kerala,India,sales@groweasy.ai,SALE_DONE,"Notes for lead 62, possession discussed",varah_swamy,Immediate,3BHK enquiry
+2026-07-23 17:30:00,Vikram Shetty,vikram.shetty@realty63.com,+91,9391086098,Rao Constructions,Mumbai,Maharashtra,India,varun@groweasy.ai,Unknown,"Notes for lead 63, possession discussed",leads_on_demand,Immediate,
+2026-02-19 10:48:00,Karan Kumar,karan.kumar@realty64.com,+91,9981209973,GrowEasy,Hyderabad,Telangana,India,varun@groweasy.ai,BAD_LEAD,,eden_park,,3BHK enquiry
+2026-07-24 10:50:00,Rohit Kumar,rohit.kumar@realty65.com,+91,9840141559,Shah Textiles,Ahmedabad,Gujarat,India,test@gmail.com,GOOD_LEAD_FOLLOW_UP,,eden_park,Immediate,
+2026-07-11 08:40:00,Ritu Das,ritu.das@realty66.com,+91,9393482659,,Ahmedabad,Gujarat,India,sales@groweasy.ai,DID_NOT_CONNECT,,sarjapur_plots,,
+2026-07-20 12:51:00,Kavya Reddy,kavya.reddy@realty67.com,+91,9364623437,Shah Textiles,Bengaluru,Karnataka,India,varun@groweasy.ai,BAD_LEAD,,,6 months,3BHK enquiry
+2026-01-01 12:28:00,John Nair,john.nair@realty68.com,+91,9486458467,Startup Inc,Bengaluru,Karnataka,India,varun@groweasy.ai,DID_NOT_CONNECT,,sarjapur_plots,,
+2026-01-03 13:35:00,Divya Gupta,divya.gupta@realty69.com,+91,9199926988,Reddy Builders,Bengaluru,Karnataka,India,test@gmail.com,SALE_DONE,,sarjapur_plots,,3BHK enquiry
+2026-05-17 10:43:00,Ashok Chawla,ashok.chawla@realty70.com,+91,9508807900,Iyer & Co,Mumbai,Maharashtra,India,priya@groweasy.ai,BAD_LEAD,,sarjapur_plots,6 months,
+2026-03-16 09:23:00,Naveen Singh,naveen.singh@realty71.com,+91,9370260533,Tech Solutions,Ahmedabad,Gujarat,India,sales@groweasy.ai,,"Notes for lead 71, possession discussed",sarjapur_plots,Immediate,
+2026-07-20 14:51:00,Anita Reddy,anita.reddy@realty72.com,+91,9453842723,,Delhi,Delhi,India,test@gmail.com,SALE_DONE,"Notes for lead 72, possession discussed",random_campaign_xyz,6 months,
+2026-03-06 14:20:00,Suresh Raheja,suresh.raheja@realty73.com,+91,9412940071,,Kochi,Kerala,India,priya@groweasy.ai,BAD_LEAD,,random_campaign_xyz,,
+2026-06-25 16:01:00,Kavya Raheja,kavya.raheja@realty74.com,+91,9880839406,,Chennai,Tamil Nadu,India,priya@groweasy.ai,SALE_DONE,"Notes for lead 74, possession discussed",random_campaign_xyz,Immediate,3BHK enquiry
+2026-02-21 12:15:00,Vivek Gupta,vivek.gupta@realty75.com,+91,9371314895,Iyer & Co,Kochi,Kerala,India,sales@groweasy.ai,SALE_DONE,,leads_on_demand,,
+2026-05-02 13:44:00,Rohit Verma,rohit.verma@realty76.com,+91,9972197233,Freelance,Ahmedabad,Gujarat,India,varun@groweasy.ai,GOOD_LEAD_FOLLOW_UP,"Notes for lead 76, possession discussed",,1 year,
+2026-07-11 14:06:00,Suresh Shah,suresh.shah@realty77.com,+91,9111325589,Shah Textiles,Ahmedabad,Gujarat,India,test@gmail.com,DID_NOT_CONNECT,"Notes for lead 77, possession discussed",leads_on_demand,6 months,
+2026-03-01 15:06:00,Kiran Mehta,kiran.mehta@realty78.com,+91,9417217932,GrowEasy,Chennai,Tamil Nadu,India,varun@groweasy.ai,GOOD_LEAD_FOLLOW_UP,"Notes for lead 78, possession discussed",,6 months,
+2026-05-16 13:30:00,John Mehta,john.mehta@realty79.com,+91,9204821934,,Mumbai,Maharashtra,India,sales@groweasy.ai,BAD_LEAD,,meridian_tower,Immediate,
