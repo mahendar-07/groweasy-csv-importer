@@ -11,7 +11,7 @@ Software Developer assignment.
    sticky-header table. No AI calls happen yet.
 3. **Confirm** — clicking "Upload File" sends the raw file to `POST /api/import`.
 4. **Extraction** — the API re-parses the CSV server-side, splits it into batches of 25
-   rows, and sends each batch to Gemini (`gemini-2.0-flash`, JSON response mode) with a
+   rows, and sends each batch to Groq ("llama-3.3-70b-versatile", JSON response mode) with a
    system prompt that encodes the full GrowEasy CRM schema, the allowed `crm_status` /
    `data_source` enums, the multi-email/phone merge rule, and the skip-if-no-contact rule.
    Batches run with a concurrency cap; a batch that fails twice is marked fully skipped
@@ -24,19 +24,18 @@ Software Developer assignment.
 - Next.js 16 (App Router, TypeScript) — frontend + backend API route in one deployable app
 - Tailwind CSS
 - Papaparse (CSV parsing, client + server)
-- Google Generative AI SDK (`@google/generative-ai`) — swap the model/provider in
+- Groq SDK (`groq-sdk`) — swap the model/provider in
   `app/api/import/route.ts` if you'd rather use OpenAI or Claude
 
 ## Setup
 
 ```bash
 npm install
-cp .env.example .env.local   # add your GEMINI_API_KEY
+cp .env.example .env.local   # add your GROQ_API_KEY
 npm run dev
 ```
 
-Get a free Gemini API key at https://aistudio.google.com/app/apikey (no billing required
-for the free tier).
+Get a free Groq API key at https://console.groq.com/keys (no billing required).
 
 Open http://localhost:3000. Sample CSVs are included in `samples/` to test end to end,
 including messy/edge-case files (multi-contact rows, invalid enum values, broken dates,

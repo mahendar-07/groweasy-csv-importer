@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Papa from "papaparse";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import Groq from "groq-sdk";
 import { SYSTEM_PROMPT, buildUserPrompt } from "@/lib/prompt";
 import {
   CrmRecord,
@@ -19,15 +19,8 @@ const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5MB, matches the frontend limit
 const MAX_ROWS = 5000;
 const MAX_COLUMNS = 100;
 
-function getModel() {
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
-  return genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
-    generationConfig: {
-      responseMimeType: "application/json",
-      temperature: 0,
-    },
-  });
+function getClient(): Groq {
+  return new Groq({ apiKey: process.env.GROQ_API_KEY });
 }
 
 function chunk<T>(arr: T[], size: number): T[][] {
@@ -95,13 +88,18 @@ async function extractBatch(
   attempt = 0
 ): Promise<{ records: CrmRecord[]; skipped: { row: Record<string, unknown>; reason: string }[] }> {
   try {
-    const model = getModel();
-    const result = await model.generateContent([
-      { text: SYSTEM_PROMPT },
-      { text: buildUserPrompt(rows) },
-    ]);
+    const groq = getClient();
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      response_format: { type: "json_object" },
+      temperature: 0,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: buildUserPrompt(rows) },
+      ],
+    });
 
-    const content = result.response.text() || "{}";
+    const content = completion.choices[0]?.message?.content ?? "{}";
     const parsed = JSON.parse(content) as {
       records?: Record<string, unknown>[];
       skipped?: { row: Record<string, unknown>; reason: string }[];
@@ -218,9 +216,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!process.env.GEMINI_API_KEY) {
+    if (!process.env.GROQ_API_KEY) {
       return NextResponse.json(
-        { error: "Server is missing GEMINI_API_KEY. Set it in your environment." },
+        { error: "Server is missing GROQ_API_KEY. Set it in your environment." },
         { status: 500 }
       );
     }
