@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Papa from "papaparse";
-import { Search, RefreshCw, ChevronRight, Download } from "lucide-react";
+import { Search, RefreshCw, ChevronRight, Download, Menu } from "lucide-react";
 import Sidebar from "@/components/Sidebar";
 import ImportModal from "@/components/ImportModal";
 import StatusBadge from "@/components/StatusBadge";
@@ -14,6 +14,7 @@ export default function Home() {
   const [result, setResult] = useState<ImportResponse | null>(null);
   const [search, setSearch] = useState("");
   const [selectedLead, setSelectedLead] = useState<CrmRecord | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const filteredLeads = useMemo(() => {
     if (!result) return [];
@@ -43,15 +44,24 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen bg-[#F7F8FA]">
-      <Sidebar />
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <main className="flex-1 px-6 py-6 sm:px-8">
         <div className="mb-6 flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-semibold text-slate-900">Manage Your Leads</h1>
-            <p className="mt-0.5 text-sm text-slate-500">
-              Monitor lead status, assign tasks, and close deals faster.
-            </p>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setSidebarOpen(true)}
+              aria-label="Open menu"
+              className="rounded-lg border border-slate-200 bg-white p-2 text-slate-500 hover:bg-slate-50 sm:hidden"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <div>
+              <h1 className="text-xl font-semibold text-slate-900">Manage Your Leads</h1>
+              <p className="mt-0.5 text-sm text-slate-500">
+                Monitor lead status, assign tasks, and close deals faster.
+              </p>
+            </div>
           </div>
           <div className="flex items-center gap-2">
             {result && (

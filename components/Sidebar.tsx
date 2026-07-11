@@ -12,6 +12,7 @@ import {
   ListChecks,
   Code2,
   Building2,
+  X,
 } from "lucide-react";
 
 const MAIN_ITEMS = [
@@ -30,15 +31,45 @@ const CONTROL_ITEMS = [
   { label: "API Center", icon: Code2 },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  /** Whether the mobile drawer is open. Ignored on sm+ where the sidebar is always visible. */
+  isOpen?: boolean;
+  /** Called when the drawer should close (backdrop click, X button, or nav item tap). */
+  onClose?: () => void;
+}
+
+export default function Sidebar({ isOpen = false, onClose }: SidebarProps) {
   return (
-    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col overflow-y-auto border-r border-slate-200 bg-white px-3 py-5 sm:flex">
-      <div className="mb-6 flex items-center gap-2 px-2">
-        <div className="flex h-7 w-7 items-center justify-center rounded-md bg-slate-900 text-xs font-bold text-white">
-          G
+    <>
+      {/* Backdrop, mobile only, shown when drawer is open */}
+      {isOpen && (
+        <div
+          onClick={onClose}
+          className="fixed inset-0 z-40 bg-black/30 sm:hidden"
+          aria-hidden="true"
+        />
+      )}
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 flex h-screen w-64 shrink-0 flex-col overflow-y-auto border-r border-slate-200 bg-white px-3 py-5 transition-transform duration-200 ease-in-out sm:sticky sm:top-0 sm:z-0 sm:w-60 sm:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="mb-6 flex items-center justify-between px-2">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-slate-900 text-xs font-bold text-white">
+              G
+            </div>
+            <span className="text-sm font-semibold text-slate-900">GrowEasy</span>
+          </div>
+          <button
+            onClick={onClose}
+            className="rounded-md p-1 text-slate-400 hover:bg-slate-50 sm:hidden"
+            aria-label="Close menu"
+          >
+            <X className="h-4 w-4" />
+          </button>
         </div>
-        <span className="text-sm font-semibold text-slate-900">GrowEasy</span>
-      </div>
 
       <div className="mb-6 flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2">
         <div className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-100 text-xs font-semibold text-blue-700">
@@ -57,6 +88,7 @@ export default function Sidebar() {
         {MAIN_ITEMS.map(({ label, icon: Icon, active }) => (
           <div
             key={label}
+            onClick={onClose}
             className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm ${
               active
                 ? "bg-emerald-50 font-medium text-emerald-700"
@@ -76,6 +108,7 @@ export default function Sidebar() {
         {CONTROL_ITEMS.map(({ label, icon: Icon }) => (
           <div
             key={label}
+            onClick={onClose}
             className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-slate-500"
           >
             <Icon className="h-4 w-4" strokeWidth={1.75} />
@@ -88,6 +121,7 @@ export default function Sidebar() {
         <Building2 className="h-4 w-4" strokeWidth={1.75} />
         Business Center
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }
