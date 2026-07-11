@@ -41,6 +41,16 @@ Open http://localhost:3000. Sample CSVs are included in `samples/` to test end t
 including messy/edge-case files (multi-contact rows, invalid enum values, broken dates,
 no-contact rows that should be skipped).
 
+### Run with Docker
+
+```bash
+docker build -t groweasy-csv-importer .
+docker run -p 3000:3000 -e GROQ_API_KEY=your-groq-api-key-here groweasy-csv-importer
+```
+
+Uses a multi-stage build on Next.js's `standalone` output, so the final image only
+contains the compiled server and static assets — not the full `node_modules`/source tree.
+
 ## Project structure
 
 ```

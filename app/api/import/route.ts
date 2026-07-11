@@ -37,15 +37,20 @@ function delay(ms: number) {
 async function runWithConcurrency<T, R>(
   items: T[],
   limit: number,
-  worker: (item: T) => Promise<R>
+  worker: (item: T) => Promise<R>,
+  onItemDone?: (result: R, completed: number, total: number) => void
 ): Promise<R[]> {
   const results: R[] = new Array(items.length);
   let next = 0;
+  let completed = 0;
 
   async function runner() {
     while (next < items.length) {
       const current = next++;
-      results[current] = await worker(items[current]);
+      const result = await worker(items[current]);
+      results[current] = result;
+      completed++;
+      onItemDone?.(result, completed, items.length);
     }
   }
 
@@ -224,23 +229,54 @@ export async function POST(req: NextRequest) {
     }
 
     const batches = chunk(rows, BATCH_SIZE);
-    const results = await runWithConcurrency(batches, CONCURRENCY_LIMIT, extractBatch);
+    const total = batches.length;
 
-    const imported: CrmRecord[] = [];
-    const skipped: { row: Record<string, unknown>; reason: string }[] = [];
-    for (const r of results) {
-      imported.push(...r.records);
-      skipped.push(...r.skipped);
-    }
+    const stream = new ReadableStream({
+      async start(controller) {
+        const encoder = new TextEncoder();
+        const imported: CrmRecord[] = [];
+        const skipped: { row: Record<string, unknown>; reason: string }[] = [];
 
-    const response: ImportResponse = {
-      imported,
-      skipped,
-      total_imported: imported.length,
-      total_skipped: skipped.length,
-    };
+        function send(event: Record<string, unknown>) {
+          controller.enqueue(encoder.encode(JSON.stringify(event) + "\n"));
+        }
 
-    return NextResponse.json(response);
+        try {
+          await runWithConcurrency(
+            batches,
+            CONCURRENCY_LIMIT,
+            extractBatch,
+            (result, completed) => {
+              imported.push(...result.records);
+              skipped.push(...result.skipped);
+              send({ type: "progress", completed, total });
+            }
+          );
+
+          const response: ImportResponse = {
+            imported,
+            skipped,
+            total_imported: imported.length,
+            total_skipped: skipped.length,
+          };
+          send({ type: "done", result: response });
+        } catch (err) {
+          send({
+            type: "error",
+            message: err instanceof Error ? err.message : "Unexpected server error.",
+          });
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "application/x-ndjson; charset=utf-8",
+        "Cache-Control": "no-cache",
+      },
+    });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Unexpected server error." },

@@ -38,6 +38,7 @@ export default function ImportModal({ onClose, onImported }: ImportModalProps) {
   const [rows, setRows] = useState<Record<string, unknown>[]>([]);
   const [columns, setColumns] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [progress, setProgress] = useState<{ completed: number; total: number } | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragActive, setDragActive] = useState(false);
 
@@ -151,13 +152,54 @@ export default function ImportModal({ onClose, onImported }: ImportModalProps) {
     if (!file) return;
     setStep("processing");
     setError(null);
+    setProgress(null);
     try {
       const formData = new FormData();
       formData.append("file", file);
       const res = await fetch("/api/import", { method: "POST", body: formData });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Import failed.");
-      onImported(data as ImportResponse);
+
+      // Pre-processing validation errors (bad file, missing API key, etc.)
+      // are still returned as a plain JSON error, not a stream.
+      const contentType = res.headers.get("content-type") ?? "";
+      if (!res.ok || !contentType.includes("ndjson")) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? "Import failed.");
+      }
+
+      if (!res.body) throw new Error("No response body received from server.");
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let finalResult: ImportResponse | null = null;
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? ""; // last entry may be an incomplete line
+
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const event = JSON.parse(line) as
+            | { type: "progress"; completed: number; total: number }
+            | { type: "done"; result: ImportResponse }
+            | { type: "error"; message: string };
+
+          if (event.type === "progress") {
+            setProgress({ completed: event.completed, total: event.total });
+          } else if (event.type === "done") {
+            finalResult = event.result;
+          } else if (event.type === "error") {
+            throw new Error(event.message || "Import failed.");
+          }
+        }
+      }
+
+      if (!finalResult) throw new Error("Import ended without a result. Please try again.");
+      onImported(finalResult);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setStep("preview");
@@ -308,6 +350,28 @@ export default function ImportModal({ onClose, onImported }: ImportModalProps) {
               <p className="text-sm text-slate-600">
                 Mapping {rows.length} rows into GrowEasy CRM fields…
               </p>
+              {progress && (
+                <div className="w-full max-w-xs">
+                  <div className="mb-1.5 flex items-center justify-between text-xs text-slate-500">
+                    <span>
+                      {progress.completed} of {progress.total} batches processed
+                    </span>
+                    <span>
+                      {Math.round((progress.completed / progress.total) * 100)}%
+                    </span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      className="h-full rounded-full bg-emerald-500 transition-all duration-300 ease-out"
+                      style={{
+                        width: `${Math.round(
+                          (progress.completed / progress.total) * 100
+                        )}%`,
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
