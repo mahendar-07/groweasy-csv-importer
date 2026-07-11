@@ -118,9 +118,9 @@ export default function Home() {
               </p>
             </div>
           ) : (
-            <div className="overflow-auto">
+            <div className="max-h-[60vh] overflow-auto">
               <table className="w-full min-w-max border-collapse text-left text-sm">
-                <thead className="bg-slate-50">
+                <thead className="sticky top-0 z-10 bg-slate-50">
                   <tr>
                     {[
                       "Lead Name",

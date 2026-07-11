@@ -32,7 +32,7 @@ const CONTROL_ITEMS = [
 
 export default function Sidebar() {
   return (
-    <aside className="hidden w-60 shrink-0 flex-col border-r border-slate-200 bg-white px-3 py-5 sm:flex">
+    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col overflow-y-auto border-r border-slate-200 bg-white px-3 py-5 sm:flex">
       <div className="mb-6 flex items-center gap-2 px-2">
         <div className="flex h-7 w-7 items-center justify-center rounded-md bg-slate-900 text-xs font-bold text-white">
           G
